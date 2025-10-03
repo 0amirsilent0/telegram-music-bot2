@@ -1,2 +1,2 @@
-python-telegram-bot2==20.3
-yt-dlp
+python-telegram-bot==20.3
+git+https://github.com/yt-dlp/yt-dlp.git@master#egg=yt-dlp
