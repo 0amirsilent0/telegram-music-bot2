@@ -1,2 +1,3 @@
 python-telegram-bot==20.3
-git+https://github.com/yt-dlp/yt-dlp.git@master#egg=yt-dlp
+yt-dlp
+ffmpeg-python
