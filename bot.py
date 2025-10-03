@@ -18,7 +18,8 @@ async def search_and_download(update: Update, context: ContextTypes.DEFAULT_TYPE
     ydl_opts = {
     'format': 'bestaudio/best',
     'noplaylist': True,
-    'default_search': 'scsearch1',  # scsearch = SoundCloud search
+    'default_search': 'scsearch1',
+    'extract_flat': False,  # برای گرفتن لینک واقعی
     'outtmpl': os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s'),
     'postprocessors': [{
         'key': 'FFmpegExtractAudio',
@@ -26,7 +27,8 @@ async def search_and_download(update: Update, context: ContextTypes.DEFAULT_TYPE
         'preferredquality': '192',
     }],
     'quiet': True
-    }
+}
+
 
 
     try:
