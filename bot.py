@@ -16,17 +16,18 @@ async def search_and_download(update: Update, context: ContextTypes.DEFAULT_TYPE
     await update.message.reply_text("🔎 دارم دنبال آهنگ می‌گردم... صبر کن ⏳")
 
     ydl_opts = {
-        'format': 'bestaudio/best',
-        'noplaylist': True,
-        'default_search': 'ytsearch1',
-        'outtmpl': os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s'),
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '192',
-        }],
-        'quiet': True
+    'format': 'bestaudio/best',
+    'noplaylist': True,
+    'default_search': 'scsearch1',  # scsearch = SoundCloud search
+    'outtmpl': os.path.join(DOWNLOAD_DIR, '%(title)s.%(ext)s'),
+    'postprocessors': [{
+        'key': 'FFmpegExtractAudio',
+        'preferredcodec': 'mp3',
+        'preferredquality': '192',
+    }],
+    'quiet': True
     }
+
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
